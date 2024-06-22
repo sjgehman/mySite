@@ -1,0 +1,15 @@
+// src/styles/_base.scss
+body {
+    height: 100%;
+    margin: 0;
+    background: $background-color;
+    color: $text-color;
+    font-family: $font-stack;
+}
+
+main {
+    @include container;
+    flex: 1;
+    padding: 1rem;
+    margin: 2rem auto;
+}

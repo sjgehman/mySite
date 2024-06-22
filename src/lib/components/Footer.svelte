@@ -1,83 +1,66 @@
-<!-- Footer.svelte -->
+<!-- src/components/Footer.svelte -->
 <footer>
-	<div class="footer-content">
-		<div class="footer-section">
-			<h3>About Us</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-		<div class="footer-section">
-			<h3>Contact</h3>
-			<p>Email: info@example.com</p>
-			<p>Phone: (123) 456-7890</p>
-		</div>
-		<div class="footer-section">
-			<h3>Follow Us</h3>
-			<ul class="social-links">
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Instagram</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<p>&copy; 2024 Your Company. All rights reserved.</p>
-	</div>
+  <div class="footer-content">
+    <div class="footer-section">
+      <ul class="social-links">
+        <li><a href="https://github.com/sjgehman"><i class="fab fa-github"></i></a></li>
+        <li><a href="mailto:samuelgehman@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="https://linkedin.com/in/sgehman/"><i class="fab fa-linkedin-in"></i></a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
 
 <style lang="scss">
-	footer {
-		background: #333;
-		color: #fff;
-		padding: 1rem;
-		width: 100%;
-	}
+  @import '../styles/variables';
+  @import '../styles/mixins';
 
-	.footer-content {
-		display: flex;
-		justify-content: space-around;
-		width: 100%;
-		max-width: 1200px;
-		margin-bottom: 1rem;
+  footer {
+    background: $secondary-color;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-family: sans-serif;
 
-		@media (max-width: 768px) {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-	}
+    .footer-content {
+      @include container;
+      display: flex;
+      justify-content: center;
 
-	.footer-section {
-		flex: 1;
-		margin: 0.5rem;
+      .footer-section {
+        flex: 1;
+        margin: 0.5rem;
+        min-width: 250px;
 
-		h3 {
-			margin-bottom: 0.5rem;
-		}
-	}
+        .social-links {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex; // Changed to flex to align icons horizontally
+          justify-content: center; // Center the icons horizontally
 
-	.social-links {
-		list-style: none;
-		padding: 0;
+          li {
+            margin: 0 15px; // Adjust spacing between icons
+            a {
+              color: #fff;
+              text-decoration: none;
+              transition: color 0.3s;
+              font-size: 1.5rem; // Increase icon size for better visibility
 
-		li {
-			margin: 0.5rem 0;
+              &:hover {
+                color: $accent-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
-			a {
-				color: #fff;
-				text-decoration: none;
-				transition: color 0.3s;
-
-				&:hover {
-					color: #1e90ff;
-				}
-			}
-		}
-	}
-
-	.footer-bottom {
-		width: 100%;
-		text-align: center;
-		padding: 1rem 0;
-		border-top: 1px solid #444;
-	}
+  @media (max-width: 768px) {
+    footer .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

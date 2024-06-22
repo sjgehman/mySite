@@ -1,115 +1,156 @@
-<!-- Header.svelte -->
-<header>
-	<a href="/" class="logo">Home</a>
+<script>
+  let isOpen = false;
 
-	<nav>
-		<input type="checkbox" id="menu-toggle" />
-		<label for="menu-toggle" class="menu-icon">
-			<span></span>
-			<span></span>
-			<span></span>
-		</label>
-		<ul class="menu">
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/contact">Contact</a></li>
-		</ul>
-	</nav>
+  // Function to toggle the menu
+  const toggleMenu = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<header>
+  <a href="/" class="logo">Home</a>
+  <nav class="desktop-menu">
+    <ul>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="hamburger-menu" on:click={toggleMenu} aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  {#if isOpen}
+    <div class="mobile-menu">
+      <button class="close-menu" on:click={toggleMenu} aria-label="Close menu">
+        &times;
+      </button>
+      <ul>
+        <li><a href="/blog" on:click={toggleMenu}>Blog</a></li>
+        <li><a href="/about" on:click={toggleMenu}>About</a></li>
+        <li><a href="/contact" on:click={toggleMenu}>Contact</a></li>
+      </ul>
+    </div>
+  {/if}
 </header>
 
 <style lang="scss">
-	header {
-		padding: 1rem;
-		background: lightskyblue;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  @import '../styles/variables';
+  @import '../styles/mixins';
 
-	.logo {
-		font-size: 1.5rem;
-		font-weight: bold;
-	}
+  header {
+    background: $background-color;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 
-	nav {
-		position: relative;
-	}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
 
-	.menu-icon {
-		display: none;
-		flex-direction: column;
-		cursor: pointer;
+  .desktop-menu {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
 
-		span {
-			height: 3px;
-			width: 25px;
-			background: #333;
-			margin: 4px;
-			border-radius: 2px;
-			transition: transform 0.3s ease, background 0.3s ease;
-		}
-	}
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
 
-	#menu-toggle {
-		display: none;
-	}
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		display: flex;
-		gap: 1rem;
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
 
-		li {
-			margin: 0;
-		}
-	}
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
 
-	a {
-		text-decoration: none;
-		color: inherit;
-		padding: 0.5rem 1rem;
-		border-radius: 4px;
-		transition: background 0.3s ease;
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
 
-		&:hover {
-			background: rgba(0, 0, 0, 0.1);
-		}
-	}
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 2rem;
+    box-sizing: border-box;
 
-	@media (max-width: 768px) {
-		.menu-icon {
-			display: flex;
-		}
+    .close-menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
 
-		ul {
-			flex-direction: column;
-			position: absolute;
-			top: 100%; /* Aligns with the bottom of the nav */
-			right: 0;
-			background: lightskyblue;
-			width: 200px; /* Set a fixed width to avoid text cut-off */
-			border-radius: 0 0 4px 4px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			display: none;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      width: 100%;
 
-			li {
-				text-align: left; /* Align text to the left */
-				margin: 0;
-				width: 100%; /* Make each menu item take full width */
-			}
-
-			a {
-				display: block;
-				width: 100%;
-				padding: 1rem; /* Increase padding for better touch targets */
-				box-sizing: border-box; /* Ensure padding is included in width */
-			}
-		}
-
-		#menu-toggle:checked + .menu-icon + .menu {
-			display: flex;
-		}
-	}
+      li {
+        a {
+          display: block;
+          padding: 1.5rem 0;
+          font-size: 1.5rem;
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            background: darken($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
 </style>

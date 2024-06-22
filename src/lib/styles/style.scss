@@ -1,13 +1,28 @@
-/* style.css */
+// src/styles/style.scss
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+/* src/styles/style.scss */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
 body {
     margin: 0;
-    background: #eee;
-    color: #333;
-    font-family: sans-serif;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
 }
 
 main {
-    padding: 1rem;
-    margin: 2rem auto;
-    max-width: 40rem;
+    margin-left: 20px;
+    /* Add padding to the main content */
+    margin-right: 20px;
+    /* Optional: Add right padding for symmetrical spacing */
 }

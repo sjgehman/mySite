@@ -1,0 +1,14 @@
+// src/styles/_mixins.scss
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin container {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
