@@ -4,7 +4,7 @@ body {
     margin: 0;
     background: $background-color;
     color: $text-color;
-    font-family: $font-stack;
+    font-family: 'Roboto', sans-serif; // Changed to Roboto
 }
 
 main {

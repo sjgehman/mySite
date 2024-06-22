@@ -43,7 +43,7 @@
   header {
     background: $background-color;
     color: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,8 +54,6 @@
     z-index: 1000;
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
       color: $text-color;
       text-decoration: none;
     }
@@ -65,7 +63,7 @@
     ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2.5rem;
       padding: 0;
       margin: 0;
 
@@ -96,9 +94,8 @@
     .bar {
       width: 25px;
       height: 3px;
-      background-color: #fff;
+      background-color: #000;
       margin: 4px 0;
-      transition: 0.4s;
     }
 
     @media (max-width: 768px) {
@@ -119,13 +116,14 @@
     align-items: center;
     z-index: 999;
     padding: 2rem;
+    opacity: 85%;
     box-sizing: border-box;
 
     .close-menu {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 2rem;
+      top: 0.3rem;
+      right: 0.55rem;
+      font-size: 3rem;
       background: none;
       border: none;
       color: #fff;
@@ -142,12 +140,12 @@
       li {
         a {
           display: block;
-          padding: 1.5rem 0;
+          padding: 1rem 0;
           font-size: 1.5rem;
           color: #fff;
           text-decoration: none;
           &:hover {
-            background: darken($primary-color, 10%);
+            background: darken($primary-color, 80%);
           }
         }
       }
