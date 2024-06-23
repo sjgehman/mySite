@@ -8,7 +8,7 @@
 </script>
 
 <header>
-  <a href="/" class="logo">Home</a>
+  <a href="/" class="logo">Sam Gehman</a>
   <nav class="desktop-menu">
     <ul>
       <li><a href="/blog">Blog</a></li>
@@ -42,8 +42,7 @@
 
   header {
     background: $background-color;
-    color: #fff;
-    padding: 1.5rem;
+    padding: 1.5rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +53,9 @@
     z-index: 1000;
 
     .logo {
-      color: $text-color;
+      color: $secondary-color;
+      font-size: 1.5rem;
+      font-weight: bold;
       text-decoration: none;
     }
   }
@@ -109,7 +110,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: $primary-color;
+    background: $background-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -126,7 +127,7 @@
       font-size: 3rem;
       background: none;
       border: none;
-      color: #fff;
+      color: #000;
       cursor: pointer;
     }
 
@@ -142,7 +143,7 @@
           display: block;
           padding: 1rem 0;
           font-size: 1.5rem;
-          color: #fff;
+          color: $text-color;
           text-decoration: none;
           &:hover {
             background: darken($primary-color, 80%);

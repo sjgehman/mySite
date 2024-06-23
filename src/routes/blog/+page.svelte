@@ -2,16 +2,16 @@
 	export let data;
 </script>
 
-<h1>Blog</h1>
+<h2>Blog</h2>
 
 <ul>
 	{#each data.posts as post}
 		<li>
-			<h2>
+			<h3>
 				<a href={post.path}>
 					{post.meta.title}
 				</a>
-			</h2>
+			</h3>
 			Published {post.meta.date}
 		</li>
 	{/each}

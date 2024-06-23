@@ -18,7 +18,7 @@
   footer {
     background: $secondary-color;
     color: #fff;
-    padding: 1.5rem 0;
+    padding: 1.5rem 2.5rem;
     text-align: center;
     font-family: sans-serif;
 
@@ -34,7 +34,7 @@
 
         .social-links {
           list-style: none;
-          padding: 0;
+          padding: 0 3rem;
           margin: 0;
           display: flex; // Changed to flex to align icons horizontally
           justify-content: center; // Center the icons horizontally
@@ -48,7 +48,7 @@
               font-size: 1.5rem; // Increase icon size for better visibility
 
               &:hover {
-                color: $accent-color;
+                color: #293766;
               }
             }
           }

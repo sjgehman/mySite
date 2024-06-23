@@ -23,7 +23,7 @@
 
   main {
     flex: 1;
-    padding: 2rem 1.5rem;
+    padding: 3rem 2.5rem 0;
     max-width: 100%; // Ensure main content does not overflow
   }
 </style>

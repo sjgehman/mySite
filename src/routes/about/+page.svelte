@@ -1,4 +1,4 @@
 <!-- about/+page.svelte -->
-<h1>Hi, I'm Sam!</h1>
+<h2>Hi, I'm Sam!</h2>
 
 <p>This is my about page.</p>

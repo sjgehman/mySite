@@ -1,4 +1,3 @@
 <!-- contact/+page.svelte -->
-<h1>Get in touch</h1>
-
-<p><a href="mailto:me@my.tld">Email me!</a></p>
+<h2>Get in touch</h2>
+<p>samuel.(lastname)@kellogg.northwestern.edu</p>
