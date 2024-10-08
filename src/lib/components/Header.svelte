@@ -29,8 +29,8 @@
         &times;
       </button>
       <ul>
-        <li><a href="/blog" on:click={toggleMenu}>Blog</a></li>
-        <li><a href="/about" on:click={toggleMenu}>About</a></li>
+        <!-- <li><a href="/blog" on:click={toggleMenu}>Blog</a></li> -->
+        <!-- <li><a href="/about" on:click={toggleMenu}>About</a></li> -->
         <li><a href="/contact" on:click={toggleMenu}>Contact</a></li>
       </ul>
     </div>
