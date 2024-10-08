@@ -8,7 +8,6 @@
     <li>Wrote my first line of code in January 2020</li>
     <li>Joined the Northwestern University Investment Office in 2021 to cover venture capital allocations</li>
     <li>Left the endowment in July 2024 to enroll at Kellogg</li>
-    <li>Currently working towards becoming a technical product manager</li>
 </ul>
 
 <p><strong>Things I enjoy:</strong></p>
