@@ -11,8 +11,9 @@
   <a href="/" class="logo">Sam Gehman</a>
   <nav class="desktop-menu">
     <ul>
+      <!-- TODO: Currently commented out blog and about page while still under construction.  -->
       <!-- <li><a href="/blog">Blog</a></li> -->
-      <li><a href="/about">About</a></li>
+      <!-- <li><a href="/about">About</a></li> -->
       <li><a href="/contact">Contact</a></li>
     </ul>
   </nav>
